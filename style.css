@@ -9,7 +9,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(
+    135deg,
+    #667eea 0%,
+    #764ba2 100%
+  );
+
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding: 20px;
 }
@@ -42,6 +49,9 @@ h1 {
   border: 2px solid #ddd;
   border-radius: 12px;
   font-size: 16px;
+
+  transition: all 0.3s ease;
+
 }
 
 .todo-input input:focus {
@@ -57,6 +67,13 @@ h1 {
   color: white;
   font-size: 15px;
   cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.todo-input button:hover {
+  transform: translateY(-2px);
+
 }
 
 #taskList {
@@ -71,6 +88,21 @@ h1 {
   padding: 14px;
   margin-bottom: 12px;
   border-radius: 12px;
+
+
+  transition: all 0.25s ease;
+}
+
+.task:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+}
+
+.task input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+
 }
 
 .task-text {
@@ -88,17 +120,18 @@ h1 {
 .actions {
   display: flex;
   gap: 8px;
-}
-
 .edit-btn,
 .save-btn,
 .cancel-btn,
+
+
 .delete-btn {
   border: none;
   border-radius: 8px;
   padding: 8px 12px;
   cursor: pointer;
   font-size: 14px;
+
 }
 
 .edit-btn {
@@ -126,4 +159,35 @@ h1 {
   border: 2px solid #667eea;
   border-radius: 8px;
   font-size: 16px;
+
+  transition: 0.2s ease;
+}
+
+.delete-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.delete-btn:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 600px) {
+  .todo-input {
+    flex-direction: column;
+  }
+
+  .todo-input button {
+    width: 100%;
+  }
+
+  .task {
+    flex-wrap: wrap;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
 }

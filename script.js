@@ -20,23 +20,29 @@ function createTask(taskText) {
   const actions = document.createElement("div");
   actions.classList.add("actions");
 
+
   const editBtn = document.createElement("button");
   editBtn.textContent = "Edit";
   editBtn.classList.add("edit-btn");
+
 
   const deleteBtn = document.createElement("button");
   deleteBtn.textContent = "Delete";
   deleteBtn.classList.add("delete-btn");
 
+
   editBtn.addEventListener("click", () => {
     startEditing(li, span, actions, editBtn, deleteBtn);
   });
+
 
   deleteBtn.addEventListener("click", () => {
     li.remove();
   });
 
+
   actions.appendChild(editBtn);
+
   actions.appendChild(deleteBtn);
 
   li.appendChild(checkbox);
@@ -45,6 +51,7 @@ function createTask(taskText) {
 
   taskList.appendChild(li);
 }
+
 
 function startEditing(li, span, actions, editBtn, deleteBtn) {
   const originalText = span.textContent;
@@ -103,6 +110,7 @@ function startEditing(li, span, actions, editBtn, deleteBtn) {
     }
   });
 }
+
 
 function addTask() {
   const taskText = taskInput.value.trim();
